@@ -35,8 +35,8 @@ jobs:
       - name: Build and Push MySQL DB Image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: mysql
-          IMAGE_TAG: lastest
+          ECR_REPOSITORY: db
+          IMAGE_TAG: latest
         run: |
           cd mysql/
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile .
