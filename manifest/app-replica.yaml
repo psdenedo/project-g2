@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: webserver
+  labels:
+    app: employees
+    component: frontend
+spec:
+  selector:
+    matchLabels:
+      app: employees
+      component: frontend
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: employees
+        component: frontend
+    spec:
+      containers:
+      - name: webserver
+        image: 280756408574.dkr.ecr.us-east-1.amazonaws.com/app:latest
+        env:
+        - name: DBHOST
+          value: mysql.final.svc.cluster.local  # Replace with the hostname of your MySQL service
+        - name: DBUSER
+          value: root
+        - name: DBPWD
+          value: pass123 # Replace with your MySQL password
+        ports:
+        - containerPort: 81
+        
