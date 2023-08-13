@@ -7,5 +7,5 @@ data:
   DBPORT: "3306"
   GROUP_NAME: "Group 2"
   DBUSER: "root"
-  IMAGE_URL: "https://project-g2.s3.amazonaws.com/wp7848346.jpg"
+  IMAGE_URL: "https://project-g2.s3.amazonaws.com/webapp-background-img.jpg"
  
